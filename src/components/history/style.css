@@ -7,9 +7,11 @@
 .historyPage .ordersContainer {
 
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    flex-wrap: wrap;
     justify-content: start;
     gap: 15px;
+    width: 100%;
 
     height: fit-content;
     box-sizing: border-box;
@@ -22,7 +24,7 @@
     align-items: start;
     gap: 5px;
 
-    width: 100%;
+    width: 48%;
     background: #e6ddeb;
     padding: 20px;
     box-sizing: border-box;
@@ -30,7 +32,10 @@
     border: #e084e1 1px solid;
 }
 
+@media only screen and (max-width: 450px){
 
+    .historyPage .ordersContainer .order {width: 100%}
+}
 
 /*===================FOR ONE ORDER===========*/
 
