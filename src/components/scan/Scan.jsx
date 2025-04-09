@@ -71,7 +71,7 @@ export default function Scan() {
                 function error(err) {
                     if (err.search("NotFoundException") === -1) {
                         console.warn("QR Code Error:", err);
-                        setError("QR Code Error:" + err);
+                    //    setError("QR Code Error:" + err);
                     }
                 }
             }
