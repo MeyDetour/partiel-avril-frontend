@@ -13,6 +13,7 @@ export default function PayCart() {
     const {removeElementToCart} = useCart()
 
     async function validCart() {
+        //CREATE ORDER SIMULATON OF PAYMENT
         const response = await fetch(import.meta.env.VITE_URL + "api/order/new", {
             method: 'POST',
             body: JSON.stringify( {products:cartList.map((item) => ({id:item.id,quantity:item.quantity}))}),
@@ -20,7 +21,6 @@ export default function PayCart() {
                 'Authorization': 'Bearer ' + localStorage.getItem('token')
             }
         })
-        console.log(response)
         if (response.status === 401) {
             localStorage.removeItem("token");
             return navigate("/")
@@ -33,7 +33,7 @@ export default function PayCart() {
         }
         const resJSON = await response.json()
 
-        //if we get product, add it to cart
+        //if we get order, add it to cart
         if (resJSON.id) {
             localStorage.removeItem("cartList");
             return navigate("/scan")

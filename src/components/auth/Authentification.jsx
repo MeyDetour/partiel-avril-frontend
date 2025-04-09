@@ -12,15 +12,16 @@ export default function Authentification() {
     const [formName, setFormName] = useState("login")
     const [formError, setFormError] = useState("")
     const navigate = useNavigate();
+
+    // DENY ACCESS TO CONNECTED USER
     useEffect(() => {
-        if (localStorage.getItem("token")){
+        if (localStorage.getItem("token")) {
             return navigate("/scan")
         }
-    }, [formName,formError,navigate]);
+    }, [formName, formError, navigate]);
 
 
     async function submitAndLogin(data) {
-        console.log(data)
         const res = await fetch(import.meta.env.VITE_URL + "api/login_check", {
             method: "POST",
             body: JSON.stringify(data),
@@ -31,7 +32,7 @@ export default function Authentification() {
         const resJSON = await res.json()
         if (resJSON.token) {
             localStorage.setItem("token", resJSON.token)
-            return      navigate("/scan")
+            return navigate("/scan")
         } else {
             setFormError("Failed to login")
         }
@@ -49,7 +50,6 @@ export default function Authentification() {
         const resJSON = await res.json()
         if (resJSON.id) {
             setFormName("login")
-
         }
         if (resJSON.message) {
             setFormError(resJSON.message)
@@ -58,6 +58,8 @@ export default function Authentification() {
 
     return (
         formName === "login" ?
+
+            //  LOGIN FORM
             <form method="post" className={"authForm"} onSubmit={handleSubmit(submitAndLogin)}>
                 <h1>Log in !</h1>
 
@@ -94,6 +96,8 @@ export default function Authentification() {
                 <span className={"link"} onClick={() => setFormName("register")}>Create Account</span>
             </form>
             :
+
+            // REGISTER FORM
             <form method="post" className={"authForm"} onSubmit={handleSubmit(submitAndRegister)}>
                 <h1> Register ! </h1>
                 {formError && (<span className={"error md-text"}>{formError}</span>)}

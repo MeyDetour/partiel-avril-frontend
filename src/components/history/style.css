@@ -1,3 +1,5 @@
+
+/*===================ALL ORDER===========*/
 .historyPage {
     gap: 20px;
 }
@@ -28,6 +30,9 @@
     border: #e084e1 1px solid;
 }
 
+
+
+/*===================FOR ONE ORDER===========*/
 
 .historyPage .oneOrderContainer {
     display: flex;

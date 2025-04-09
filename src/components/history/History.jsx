@@ -12,13 +12,13 @@ export default function History() {
     const [oneOrder, setOneOrder] = useState(null)
     useEffect(() => {
         async function fetchData() {
+            // GET ALL ORDER
             const response = await fetch(import.meta.env.VITE_URL + "api/order/history", {
                 method: 'GET',
                 headers: {
                     'Authorization': 'Bearer ' + localStorage.getItem('token')
                 }
             })
-            console.log(response)
             if (response.status === 401) {
                 localStorage.removeItem("token");
                 return navigate("/")
@@ -56,13 +56,14 @@ export default function History() {
     return (
         <>
             <div className="container historyPage">
-
                 {error && <div className="error">{error}</div>}
                 {
                     loading ?
                         <Loader/>
                         :
                         oneOrder ?
+
+                            // ONE ORDER PAGE
                             <>
                                 <span onClick={() => setOneOrder(null)} className={"basicButton"}>Return to list</span>
                                 <div className={"oneOrderContainer"}>
@@ -96,6 +97,8 @@ export default function History() {
                             </>
 
                             :
+
+                            // ALL ORDER PAGE
                             <>
                                 <Link to={"/scan"} className={"basicButton"}>Scanner encore</Link>
 
