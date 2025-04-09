@@ -1,0 +1,43 @@
+.validPage{
+    gap: 20px;
+}
+.validPage .itemsToValidCart{
+
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    gap: 15px;
+    width: 100vw;
+
+    height: fit-content;
+    box-sizing: border-box;
+}
+
+.validPage .itemsToValidCart .item  img {
+
+    height: 107px;
+    width: 121px;
+    object-fit: contain;
+    box-shadow: #0000002b 0 0 18px 0;
+}
+
+
+.validPage .itemsToValidCart .item {
+    display: flex;
+    flex-direction: row;
+    align-items: start;
+    gap: 20px;
+
+}
+
+.validPage .itemsToValidCart .item .textContainer{
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: start;
+    padding-top: 10px;
+
+}
+
+.validPage .itemsToValidCart .item .textContainer span{
+}

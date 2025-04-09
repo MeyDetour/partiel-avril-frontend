@@ -1,0 +1,70 @@
+.historyPage {
+    gap: 20px;
+}
+
+.historyPage .ordersContainer {
+
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    gap: 15px;
+
+    height: fit-content;
+    box-sizing: border-box;
+}
+
+
+.historyPage .ordersContainer .order {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    gap: 5px;
+
+    width: 100%;
+    background: #e6ddeb;
+    padding: 20px;
+    box-sizing: border-box;
+    border-radius: 7px;
+    border: #e084e1 1px solid;
+}
+
+
+.historyPage .oneOrderContainer {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 20px;
+}
+.historyPage .oneOrderProductsContainer{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.historyPage .oneOrderProductsContainer .oneOrderOneProductContainer img {
+
+    height: 121px;
+    width: 121px;
+    object-fit: contain;
+    box-shadow: #0000002b 0 0 18px 0;
+}
+
+
+.historyPage .oneOrderProductsContainer .oneOrderOneProductContainer{
+    display: flex;
+    flex-direction: row;
+    align-items: start;
+    gap: 20px;
+
+}
+
+.historyPage .oneOrderProductsContainer .oneOrderOneProductContainer .textContainer{
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: start;
+    padding-top: 10px;
+
+}
+
+.historyPage .oneOrderProductsContainer .oneOrderOneProductContainer .textContainer span{
+}

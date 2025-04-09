@@ -1,0 +1,65 @@
+
+.scanPage .itemsInCart {
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    gap: 15px;
+    width: 100vw;
+    height: fit-content;
+    background: #e8e8e8;
+    padding: 20px;
+    box-sizing: border-box;
+    overflow-y: scroll;
+}
+
+
+.scanPage .itemsInCart .item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.scanPage .itemsInCart .item .imageContainer{
+    position: relative;
+
+}
+
+.scanPage .itemsInCart .item .imageContainer span{
+    background: white;
+    padding: 3px;
+    font-size: 13px;
+    border-radius: 50%;
+    position: absolute;
+    bottom: -3px;
+    right: -6px;
+    box-shadow: #80808096 0 0 5px 1px;
+}
+.scanPage .itemsInCart .item .imageContainer img {
+
+    width: 71px;
+    object-fit: contain;
+}
+
+
+.scanPage .center{
+
+    height: 80vh;
+    width: 100%;
+    display: flex
+;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.scanPage .center #reader{
+    width: 100%;
+}
+
+.scanPage nav{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+}
