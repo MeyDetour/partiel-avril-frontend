@@ -46,7 +46,12 @@
 
 
 /*===================SCANER===========*/
+.scanPage .container{
+    align-items: center !important;
+}
 .scanPage .center{
+
+    max-width: 352px;
 
     height: 80vh;
     width: 100%;
